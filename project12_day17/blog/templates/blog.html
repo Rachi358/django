@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %} Blog {% endblock %}
+
+{% block content %}
+<h1>Blog As</h1>
+
+{% regroup students by course as group_list %}
+<ul>
+    {% for group in group_list %}
+    <li> Couser: {{group.grouper}}
+        <ul>
+            {% for student in group.list %}
+            <li>{{student.name}}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+
+<p>
+    Progress : {% widthratio 50 100 100 %}
+</p>
+
+{% spaceless %}
+<div>
+    <span>This is the </span>
+    <span>Spaceless Template tag</span>
+</div>
+{% endspaceless%}
+
+{% filter upper%}
+This txt will be in upper case
+{% endfilter %}
+
+{% for student in students %}
+<p>{{student.name|upper}} pursuing course {{student.course|add:" placement"}}</p>
+{% endfor %}
+{% endblock %}

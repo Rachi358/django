@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Home Page {% endblock %}
+{% block content%}
+<h1>Welcome to my site</h1>
+<p>This is Home Page</p>
+
+<img src="{% static 'images/image.png' %}" alt="home_image">
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="text" placeholder="Enter Username">
+    <input type="password" placeholder="Enter Password">
+    <button>Login</button>
+</form>
+
+<button onclick="ShowAlert()">click</button>
+
+{% endblock%}

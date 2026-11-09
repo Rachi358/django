@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Templates</title>
+</head>
+
+<body>
+    <h1>Blog Filter Page</h1>
+    {% comment %} Text Filter {% endcomment %}
+    <p><b>Title (Normal)</b>: {{post.title}}</p>
+    <p><b>Upper Title</b>: {{post.title|upper}}</p>
+    <p><b>lower Title</b>: {{post.title|lower}}</p>
+    <p><b>Capital</b>: {{post.title|capfirst}}</p>
+    <p><b>Title</b>: {{post.title|title}}</p>
+    <p><b>TruncateChars</b>: {{post.title|truncatechars:20}}</p>
+    <p><b>TruncateWord</b>: {{post.title|truncatewords:2}}</p>
+    <p><b>LineBreak</b>: {{post.title|linebreaks}}</p>
+    <hr>
+    {% comment %} Number Filter {% endcomment %}
+    <!-- ADDITION -->
+    <p><b>Original price</b>: {{post.price}}</p>
+    <p><b>Original price (+10)</b>: {{post.price|add:10}}</p>
+
+    <!-- DIVISSION -->
+    {% if post.normal_num|divisibleby:2 %}
+    <p>{{ post.normal_num }} is Even</p>
+    {% else %}
+    <p>{{ post.normal_num }} is Odd</p>
+    {% endif %}
+    <hr>
+    {% comment %} List Filter {% endcomment %}
+    <p><b>List</b>: {{post.tags}}</p>
+    <p><b>First last item</b>: {{post.tags|first}}</p>
+    <p><b>List last item</b>: {{post.tags|last}}</p>
+    <p><b>Length of list</b>: {{post.tags|length}}</p>
+    <p><b>Slice</b>: {{ post.tags|slice:":2" }}</p>
+    <p><b>Join the List</b>: {{post.tags|join:" "}}</p>
+    <hr>
+    {% comment %} yesno and pluralize Filter {% endcomment %}
+    <!-- yesno -->
+    <p><b>YESNO</b>: {{post.author|yesno:"Yes, No, MayBe"}}</p>
+
+    <!-- Pluralize -->
+     <p><b>Num of comments</b>: {{post.comments_count}} comment{{post.comments_count|pluralize}}</p>
+
+    {% comment %} List Filter {% endcomment %}
+
+    <p><b>Date Formate</b> {{post.create_at|date:"D d M y"}}</p>
+    <p><b>Timming</b>: {{post.create_at|time:"H:i"}}</p>
+</body>
+
+</html>

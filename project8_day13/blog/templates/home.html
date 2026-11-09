@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates Basic</title>
+</head>
+<body>
+    <h1>Templates Basic</h1>
+    {% comment %} this is comments {% endcomment %}
+    <p> this is the normal tamplate to demonstrate basic  HTML structure </p>
+    <p>Wellcome to the blog home page</p>
+
+    {% comment %} Single variable {% endcomment %}
+    <p>Name: {{name}}</p>
+    <p>Age: {{age}}</p>
+
+    {% comment %} List item Access {% endcomment %}
+    <p>FirstSkill: {{skill.0}}</p>
+    <p>skill:- {{skill}}</p>
+
+    {% comment %} Classs Attributes {% endcomment %}
+    <p>Username:- {{user.name}}</p>
+    <p>Age:- {{user.age}}</p>
+
+    {% comment %} Dictionary {% endcomment %}
+    <h2>Blog Information</h2>
+    <p>Title:- {{blog.title}}</p>
+    <p>content: - {{blog.content}}</p>
+    <p>Created  when:- {{blog.created_at}}</p>
+
+    {% comment %} Safe And  Escape {% endcomment %}
+    <p>Content:- {{blog.content|safe}}</p>
+    <p>Empty Value :- {{empty_value|default:"No Value is provided"}}</p>
+
+    {% comment %} Nested {% endcomment %}
+
+    <p>Nested content: - {{blog.author.name}}</p>
+
+</body>
+</html>
