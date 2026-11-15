@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+{% load static %}
+
+<section class="projects">
+    <h1>Featured Projects</h1>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <img src="{% static 'images/project1.png' %}" alt="Portfolio Project">
+            <h3>Portfolio Website</h3>
+        </div>
+
+        <div class="project-card">
+            <img src="{% static 'images/project2.png' %}" alt="NIDS Project">
+            <h3>Network Intrusion Detection System</h3>
+        </div>
+
+        <div class="project-card">
+            <img src="{% static 'images/project3.png' %}" alt="Blog Project">
+            <h3>Python Flask Blog</h3>
+        </div>
+
+        <div class="project-card">
+            <img src="{% static 'images/project4.png' %}" alt="Chatbot Project">
+            <h3>AI Chatbot</h3>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
