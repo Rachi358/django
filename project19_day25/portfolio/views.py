@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import Students
 
 def student_list(request):
-    return render(request, 'portfolio/student_list.html')
+    students = Students.objects.all()
+    return render(request, 'portfolio/student_list.html', {'students': students})
